@@ -4,11 +4,13 @@ import Footer from "../components/Footer"
 
 const MyLayouts = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
         <Navbar/>
-        <Outlet/>
+        <main className="flex-1">
+        <Outlet />
+        </main>
         <Footer/>
-    </>
+    </div>
   )
 }
 

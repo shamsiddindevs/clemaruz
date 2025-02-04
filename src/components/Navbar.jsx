@@ -23,6 +23,7 @@ const mobileMenuItems = [
 const menuItems = [
   {
     title: "Бумажная продукция",
+    link: "бумажная-продукция",
     subItems: [
       "Влажные салфетки",
       "Диспенсер",
@@ -32,6 +33,7 @@ const menuItems = [
   },
   {
     title: "Моющие средства",
+    link: "моющие-средства",
     subItems: [
       "Бутылки, дозаторы, распылители для моющих средств",
       "Моющие средства для пищевой промышленности",
@@ -39,13 +41,20 @@ const menuItems = [
     ],
   },
   {
-    title: "Подметальные машины",
+    title: "Поломоечные машины",
+    link: "поломоечные-машины",
     subItems: ["Бензиновые", "Для улицы", "Подметально-вакуумные"],
   },
   {
-    title: "Бумажная продукция",
+    title: "Пылесосы",
+    link: "пылесосы",
     subItems: ["Аккумуляторные", "Для производств", "Компактные"],
   },
+  {
+    title: "Уборочный инвентарь",
+    link: "уборочный-инвентарь",
+    subItems: ["Швабры", "Ведра", "Тележки"],
+  }
 ];
 
 const Navbar = () => {
@@ -78,7 +87,7 @@ const Navbar = () => {
                     onMouseOver={() => setActiveMenu(index)}
                     onMouseOut={() => setActiveMenu(null)}
                   >
-                    <Link className="flex justify-between items-center">
+                    <Link to={`/product-category/${item.link}`} className="flex justify-between items-center">
                       {item.title}{" "}
                       <MdKeyboardArrowRight className="text-[18px]" />
                     </Link>
@@ -97,7 +106,8 @@ const Navbar = () => {
                             "border-gray-700 border-b-1 border-dashed"
                           }`}
                         >
-                          {subItem}
+                         <Link to={`/products/${subItem?.toLowerCase()}`} className="flex justify-between items-center">
+                            {subItem}{" "}</Link>
                         </li>
                       ))}
                     </ul>

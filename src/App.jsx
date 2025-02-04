@@ -7,6 +7,7 @@ import Cart from "./pages/Cart";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
 import Categories from "./pages/Category";
+import NotFound from "./pages/NotFound";
 
 // Create Routes
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     element: <MyLayouts />,
     children: [
       {
-        index:true,
+        index: true,
         element: <Home />,
       },
       {
@@ -28,28 +29,26 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />
+        element: <Cart />,
       },
       {
         path: "/products",
         element: <Products />,
       },
       {
-        path:"/products/:id",
-        element: <Product />
+        path: "/products/:id",
+        element: <Product />,
       },
       {
-        path:"/product-category/:id",
-        element: <Categories />
-      }
-    ]
-
+        path: "/product-category/:id",
+        element: <Categories />,
+      },
+    ],
   },
   {
     path: "*",
-    element: <div>404 Not Found</div>
-  }
-  
+    element: <NotFound/>,
+  },
 ]);
 
 const App = () => {
