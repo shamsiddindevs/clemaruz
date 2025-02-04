@@ -6,10 +6,14 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4 ">
             <div className="flex items-center gap-2">
-              <img src="../../public/assets/lightLogo.png" alt="Clemar Logo" className="h-8" />
+              <img
+                src="./assets/lightLogo.png"
+                alt="Clemar Logo"
+                className="h-8"
+              />
             </div>
             <p className="text-gray-400 text-sm">
-              Представляем лучшие мировые бренды  в  <br /> Узбекистане
+              Представляем лучшие мировые бренды в <br /> Узбекистане
             </p>
           </div>
 
@@ -17,11 +21,41 @@ const Footer = () => {
           <div className="space-y-4 lg:ml-auto">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">My Account</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">My Wishlist</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">My Cart</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Sign In</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Check Out</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white">
+                  My Account
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white">
+                  My Wishlist
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white">
+                  My Cart
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white">
+                  Sign In
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white">
+                  Check Out
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -39,14 +73,10 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-        
         </div>
-
-       
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
