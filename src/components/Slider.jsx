@@ -1,42 +1,42 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Pagination, Autoplay} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Slider = () => {
   const brands = [
     {
       id: 1,
-      name: 'BYD',
-      logo: '../../public/assets/byd.png'
+      name: "BYD",
+      logo: "./assets/byd.png",
     },
     {
       id: 2,
-      name: 'ISA Samarkand',
-      logo: '../../public/assets/sag.png'
+      name: "ISA Samarkand",
+      logo: "./assets/sag.png",
     },
     {
       id: 3,
-      name: 'Artel',
-      logo: '../../public/assets/artel.png'
+      name: "Artel",
+      logo: "./assets/artel.png",
     },
     {
       id: 4,
-      name: 'BK',
-      logo: '../../public/assets/uzair.png'
+      name: "BK",
+      logo: "./assets/uzair.png",
     },
     {
-        id: 5,
-        name: 'Artel',
-        logo: '../../public/assets/artel.png'
-      },
-      {
-        id: 6,
-        name: 'BK',
-        logo: '../../public/assets/sofia.png'
-      },
+      id: 5,
+      name: "Artel",
+      logo: "./assets/artel.png",
+    },
+    {
+      id: 6,
+      name: "BK",
+      logo: "./assets/sofia.png",
+    },
     // Add more brands if needed
-  ]
+  ];
 
   return (
     <section className="container py-10">
@@ -46,26 +46,25 @@ const Slider = () => {
         slidesPerView={1}
         pagination={{
           clickable: true,
-          bulletClass: 'custom-bullet',
-          bulletActiveClass: 'custom-bullet-active'
+          bulletClass: "custom-bullet",
+          bulletActiveClass: "custom-bullet-active",
         }}
         autoplay={{
           delay: 3000,
-          disableOnInteraction: false
+          disableOnInteraction: false,
         }}
         breakpoints={{
           640: {
-            slidesPerView: 2
+            slidesPerView: 2,
           },
           768: {
-            slidesPerView: 3
+            slidesPerView: 3,
           },
           1024: {
-            slidesPerView: 4
-          }
+            slidesPerView: 4,
+          },
         }}
-        className="py-8"
-      >
+        className="py-8">
         {brands.map((brand) => (
           <SwiperSlide key={brand.id}>
             <div className="flex items-center justify-center p-4 bg-white   duration-300">
@@ -79,7 +78,7 @@ const Slider = () => {
         ))}
       </Swiper>
     </section>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;
