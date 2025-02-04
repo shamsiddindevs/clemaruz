@@ -197,7 +197,7 @@ const Navbar = () => {
         <div className="fixed inset-0 flex justify-center items-start z-50">
           <div className="w-full max-w-[800px] mt-20">
             {/* Search Bar */}
-            <div className="relative z-[100] ">
+            <div className="relative z-[100] px-4">
               <div className="flex border-b border-[#019edc] pb-2 mb-10">
                 <input
                   type="text"
