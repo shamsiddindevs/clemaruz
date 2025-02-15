@@ -1,6 +1,4 @@
 
-import { Link} from 'react-router-dom';
-import Card from './Card';
 
 const RelatedProducts = ({products}) => {
     console.log(products);
