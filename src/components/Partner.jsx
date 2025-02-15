@@ -3,7 +3,7 @@ const Partner = () => {
     {
       id: 1,
       name: 'KIA',
-      logo: './assets/kia.png'
+      logo: '.public/assets/kia.png'
     },
     {
       id: 2,
