@@ -226,7 +226,7 @@ const Navbar = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Search Results */}
-                <Result text={query} />
+                <Result text={query} setModal = {setModal} />
               </div>
             </div>
 

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Result = ({ text }) => {
+const Result = ({ text , setModal}) => {
   const categories = useSelector((state) => state?.categories);
 
   // Filter categories based on search text
@@ -35,8 +35,9 @@ const Result = ({ text }) => {
     <>
       {filteredCategories.map((category, index) => (
         <Link
+        onClick={() => setModal(false)}
           key={index}
-          to={`/product/${category.singleLink}`}
+          to={`/products/${category?.singleLink}`}
           className="bg-[#222222] hover:bg-[#2a2a2a] transition-all p-4 rounded-lg flex items-center gap-4 group"
         >
           <div className="w-20 h-20 overflow-hidden rounded-lg">

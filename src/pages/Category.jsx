@@ -13,7 +13,7 @@ const Categories = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState("default");
   const itemsPerPage = 8;
-
+  const [modal, setModal] = useState(false);
   const data = categories.filter((category) => category?.link === id);
 
   // Sort data based on selection
@@ -86,8 +86,8 @@ const Categories = () => {
       </div>
 
       {totalPages > 1 && (
-        <div className="container grid grid-cols-1 lg:grid-cols-3  gap-2 mb-10">
-          <div className="flex justify-start items-center">
+        <div className="container grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-2 mb-10">
+          <div className="flex justify-center sm:justify-start items-center">
             {currentPage > 1 && (
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
@@ -98,7 +98,7 @@ const Categories = () => {
             )}
           </div>
 
-          <div className="flex justify-center items-center gap-2.5 ">
+          <div className="flex justify-center sm:justify-center items-center gap-2.5 ">
             {[...Array(totalPages)].map((_, index) => (
               <button
                 key={index + 1}
@@ -113,7 +113,7 @@ const Categories = () => {
             ))}
           </div>
 
-          <div className="flex justify-end items-center">
+          <div className="flex justify-center sm:justify-end items-center">
             {currentPage !== totalPages && (
               <button
                 onClick={() => handlePageChange(currentPage + 1)}

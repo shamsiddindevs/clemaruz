@@ -1,40 +1,51 @@
-import {Link} from "react-router-dom";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Card = ({category}) => {
-  function handleClick() {
-    window.scrollTo({top: 0, behavior: "smooth"});
-  }
+const Card = ({category, link = "products"}) => {
+ function handleClick() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+ }
+
   return (
     <>
       <div className="mb-2 flex flex-col items-start relative">
-        <Link
-          to={`product/${category?.id}`}
-          onClick={handleClick}>
+        {category?.isNew && (
+          <div className="absolute z-10 top-0 left-0 bg-[#019edc] text-white text-xs px-2 py-1">
+            Новинка
+          </div>
+        )}
+        <Link to={`/${link}/${link=="products" ? category?.singleLink : category?.link}`} onClick={handleClick}>
           <img
             src={category?.image}
             alt={category?.title}
-            className={`w-full mb-5 h-auto rounded-2xl}`}
+            className={`w-full mb-5 h-auto ${category?.border && "rounded-2xl"}`}
           />
         </Link>
-
-        <div className="mb-3 font-medium text-xl text-gray-700">
-          {category?.description}
-        </div>
-
-        <div className="mb-2">
-          <del className="text-gray-500 text-xs ml-2">{category?.oldPrice}</del>
-        </div>
-
+        {category?.description && (
+          <div className="mb-3 font-medium text-xl text-gray-700">
+            {category?.description}
+          </div>
+        )}
+        {category?.price && (
+          <div className="mb-2">
+            {category?.price}
+            {category?.oldPrice && (
+              <del className="text-gray-500 text-xs ml-2">{category?.oldPrice}</del>
+            )}
+          </div>
+        )}
         <span
-          className={`mb-2 font-semibold text-xs uppercase font-normal`}>
+          className={`mb-2 font-semibold ${
+            category?.description && "text-xs uppercase font-normal"
+          }`}
+        >
           {category?.title}
         </span>
-       
+        {category?.description && (
           <button className="mt-auto inline-block px-6 py-3 bg-[#019edc] text-white gap-1 transition-all text-sm">
-          Подробнее
+            {category?.isNew ? "В корзину" : "Подробнее"}
           </button>
-      
+        )}
       </div>
     </>
   );
@@ -52,9 +63,9 @@ Card.propTypes = {
     isNew: PropTypes.bool,
     catalog: PropTypes.string,
     type: PropTypes.string,
-    count: PropTypes.number,
+    count: PropTypes.number
   }),
-  link: PropTypes.string,
+  link: PropTypes.string
 };
 
 export default Card;
